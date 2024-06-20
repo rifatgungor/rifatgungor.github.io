@@ -18,28 +18,6 @@
   gtag('config', 'G-NE37NFLGYW');
 </script>
 <body>
-    <script>
-        var saveBtn = document.getElementById("save-btn");
-        saveBtn.addEventListener("click", function () {
-          // Get the contact information from the website
-          var contact = {
-            name: "Rıfat Güngör",
-            phone: "+90-530-961-8161",
-            email: "rifat.gungor@outlook.com"
-          };
-          // create a vcard file
-          var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nEND:VCARD";
-          var blob = new Blob([vcard], { type: "text/vcard" });
-          var url = URL.createObjectURL(blob);
-          
-          const newLink = document.createElement('a');
-          newLink.download = contact.name + ".vcf";
-          newLink.textContent = contact.name;
-          newLink.href = url;
-          
-          newLink.click();
-    });
-    </script>
     <div class="card">
         <div class="card-header">
             <img src="profile.jpeg" alt="Profile Image" class="profile-img">
@@ -68,5 +46,28 @@
         <div class="card-footer">
         </div>
     </div>
+
+    <script>
+        var saveBtn = document.getElementById("save-btn");
+        saveBtn.addEventListener("click", function () {
+          // Get the contact information from the website
+          var contact = {
+            name: "Rıfat Güngör",
+            phone: "+90-530-961-8161",
+            email: "rifat.gungor@outlook.com"
+          };
+          // create a vcard file
+          var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nEND:VCARD";
+          var blob = new Blob([vcard], { type: "text/vcard" });
+          var url = URL.createObjectURL(blob);
+          
+          const newLink = document.createElement('a');
+          newLink.download = contact.name + ".vcf";
+          newLink.textContent = contact.name;
+          newLink.href = url;
+          
+          newLink.click();
+    });
+    </script>
 </body>
 </html>
